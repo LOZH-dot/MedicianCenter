@@ -44,7 +44,11 @@ namespace MedicianCenter.Admin
         private async void UpdateMedCardsDataGridView()
         {
             using (Database.Model.Context db = new Database.Model.Context())
-                MedCardsDataGridView.DataSource = await db.med_card.Include(x => x.med_card_contra).Include(x => x.istoria_priemov).ToListAsync();
+                MedCardsDataGridView.DataSource = await db.med_card
+                    .Include(x => x.med_card_contra)
+                    .Include(x => x.istoria_priemov)
+                    .Include(x => x.healing_list_pills)
+                    .ToListAsync();
         }
 
         private void AdminMain_FormClosed(object sender, FormClosedEventArgs e)

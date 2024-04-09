@@ -100,8 +100,44 @@
     <Compile Include="Database\Model\list_tests.cs" />
     <Compile Include="Database\Model\med_card.cs" />
     <Compile Include="Database\Model\med_card_contra.cs" />
+    <Compile Include="Doctor\DoctorMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\DoctorMainForm.Designer.cs">
+      <DependentUpon>DoctorMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\SelectPillsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\SelectPillsForm.Designer.cs">
+      <DependentUpon>SelectPillsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registar\AddHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registar\AddHistoryForm.Designer.cs">
+      <DependentUpon>AddHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registar\FindDoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registar\FindDoctorForm.Designer.cs">
+      <DependentUpon>FindDoctorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registar\FindPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registar\FindPatientForm.Designer.cs">
+      <DependentUpon>FindPatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registar\RegistarMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registar\RegistarMainForm.Designer.cs">
+      <DependentUpon>RegistarMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StateSingleton.cs" />
     <EmbeddedResource Include="Admin\AddDoctorForm.resx">
       <DependentUpon>AddDoctorForm.cs</DependentUpon>
@@ -118,6 +154,12 @@
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\DoctorMainForm.resx">
+      <DependentUpon>DoctorMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\SelectPillsForm.resx">
+      <DependentUpon>SelectPillsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -127,6 +169,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registar\AddHistoryForm.resx">
+      <DependentUpon>AddHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registar\FindDoctorForm.resx">
+      <DependentUpon>FindDoctorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registar\FindPatientForm.resx">
+      <DependentUpon>FindPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registar\RegistarMainForm.resx">
+      <DependentUpon>RegistarMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

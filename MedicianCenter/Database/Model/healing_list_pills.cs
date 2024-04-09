@@ -13,9 +13,9 @@ namespace MedicianCenter.Database.Model
 
         public int ID_list_pills { get; set; }
 
-        public int ID_healing { get; set; }
+        public int ID_med_card { get; set; }
 
-        public virtual healing healing { get; set; }
+        public virtual med_card med_card { get; set; }
 
         public virtual list_pills list_pills { get; set; }
     }

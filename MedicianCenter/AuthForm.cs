@@ -51,12 +51,18 @@ namespace MedicianCenter
                 case AuthState.NonAuth:
                     break;
                 case AuthState.Doctor:
+                    Doctor.DoctorMainForm dmf = new Doctor.DoctorMainForm();
+                    this.Hide();
+                    dmf.Show();
                     break;
                 case AuthState.Nurse:
                     break;
                 case AuthState.Patient:
                     break;
                 case AuthState.Registar:
+                    Registar.RegistarMainForm rmf = new Registar.RegistarMainForm();
+                    this.Hide();
+                    rmf.Show();
                     break;
                 case AuthState.Admin:
                     Admin.AdminMain am = new Admin.AdminMain();

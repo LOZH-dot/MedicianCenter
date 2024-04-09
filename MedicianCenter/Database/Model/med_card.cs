@@ -11,6 +11,7 @@ namespace MedicianCenter.Database.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public med_card()
         {
+            healing_list_pills = new HashSet<healing_list_pills>();
             istoria_priemov = new HashSet<istoria_priemov>();
             med_card_contra = new HashSet<med_card_contra>();
         }
@@ -59,6 +60,9 @@ namespace MedicianCenter.Database.Model
 
         [StringLength(50)]
         public string profession { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<healing_list_pills> healing_list_pills { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<istoria_priemov> istoria_priemov { get; set; }

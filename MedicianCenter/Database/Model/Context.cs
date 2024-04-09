@@ -64,11 +64,6 @@ namespace MedicianCenter.Database.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<healing>()
-                .HasMany(e => e.healing_list_pills)
-                .WithRequired(e => e.healing)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<healing>()
                 .HasMany(e => e.istoria_priemov)
                 .WithRequired(e => e.healing)
                 .WillCascadeOnDelete(false);
@@ -159,6 +154,11 @@ namespace MedicianCenter.Database.Model
             modelBuilder.Entity<med_card>()
                 .Property(e => e.profession)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<med_card>()
+                .HasMany(e => e.healing_list_pills)
+                .WithRequired(e => e.med_card)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<med_card>()
                 .HasMany(e => e.istoria_priemov)
