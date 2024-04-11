@@ -64,6 +64,7 @@
             this.PillsDataGridView.ReadOnly = true;
             this.PillsDataGridView.Size = new System.Drawing.Size(414, 455);
             this.PillsDataGridView.TabIndex = 2;
+            this.PillsDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PillsDataGridView_MouseClick);
             // 
             // label2
             // 

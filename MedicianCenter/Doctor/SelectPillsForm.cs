@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Windows.Forms;
+using MedicianCenter.Admin;
 
 namespace MedicianCenter.Doctor
 {
@@ -54,15 +55,55 @@ namespace MedicianCenter.Doctor
                 db.healing_list_pills.Add(hlp);
                 db.SaveChanges();
 
+                UpdatePills();
+            }
+        }
+
+        private void UpdatePills()
+        {
+            using (Database.Model.Context db = new Context())
+            {
                 var pills = db.healing_list_pills
-                    .Include(x => x.list_pills)
-                    .Include(x => x.med_card)
-                    .Where(x => x.ID_med_card == mc.ID_med_card)
-                    .Select(x => x.list_pills);
+                        .Include(x => x.list_pills)
+                        .Include(x => x.med_card)
+                        .Where(x => x.ID_med_card == mc.ID_med_card)
+                        .Select(x => x.list_pills);
 
                 PillsDataGridView.DataSource = pills.Include(x => x.list_pills_list_tests).Include(x => x.healing_list_pills).ToList();
             }
         }
 
+        private void PillsDataGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu m = new ContextMenu();
+
+                int currentMouseOverRow = PillsDataGridView.HitTest(e.X, e.Y).RowIndex;
+
+                if (currentMouseOverRow >= 0)
+                {
+                    m.MenuItems.Add(new MenuItem("Удалить", (s, se) =>
+                    {
+                        using (Database.Model.Context db = new Database.Model.Context())
+                        {
+                            var id = db.list_pills.Find(PillsDataGridView.Rows[currentMouseOverRow].Cells["ID_list_pills"].Value);
+
+                            var rHealingListPills = db.healing_list_pills
+                                .Where(x => x.ID_list_pills == id.ID_list_pills
+                                && x.ID_med_card == mc.ID_med_card)
+                                .FirstOrDefault();
+
+                            db.healing_list_pills.Remove(rHealingListPills);
+                            db.SaveChanges();
+                        }
+
+                        UpdatePills();
+                    }));
+                }
+
+                m.Show(PillsDataGridView, new Point(e.X, e.Y));
+            }
+        }
     }
 }
