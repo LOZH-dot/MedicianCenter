@@ -75,10 +75,13 @@ namespace MedicianCenter.Doctor
                     }));
                     m.MenuItems.Add(new MenuItem("Назначить анализы", (s, se) =>
                     {
-                        // Назначить анализы
                         using (Database.Model.Context db = new Database.Model.Context())
                         {
+                            var mc = db.med_card
+                                .Find(MedCardsDataGridView.Rows[currentMouseOverRow].Cells["ID_med_card"].Value);
 
+                            Doctor.AddTestForm atf = new AddTestForm(mc);
+                            atf.ShowDialog();
                         }
                     }));
                     m.MenuItems.Add(new MenuItem("Отчет по анализам", (s, se) =>
@@ -86,7 +89,11 @@ namespace MedicianCenter.Doctor
                         // Отчет по анализам
                         using (Database.Model.Context db = new Database.Model.Context())
                         {
+                            var mc = db.med_card
+                                .Find(MedCardsDataGridView.Rows[currentMouseOverRow].Cells["ID_med_card"].Value);
 
+                            Doctor.ViewTestsResultsForm vtrf = new ViewTestsResultsForm(mc);
+                            vtrf.ShowDialog();
                         }
                     }));
                     m.MenuItems.Add(new MenuItem("Составить выписку", (s, se) =>

@@ -100,6 +100,13 @@
     <Compile Include="Database\Model\list_tests.cs" />
     <Compile Include="Database\Model\med_card.cs" />
     <Compile Include="Database\Model\med_card_contra.cs" />
+    <Compile Include="Database\Model\TestResult.cs" />
+    <Compile Include="Doctor\AddTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\AddTestForm.Designer.cs">
+      <DependentUpon>AddTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\DoctorMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +118,18 @@
     </Compile>
     <Compile Include="Doctor\SelectPillsForm.Designer.cs">
       <DependentUpon>SelectPillsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\ViewTestsResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\ViewTestsResultsForm.Designer.cs">
+      <DependentUpon>ViewTestsResultsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabAssistant\LabAssistantMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabAssistant\LabAssistantMainForm.Designer.cs">
+      <DependentUpon>LabAssistantMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -154,11 +173,17 @@
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\AddTestForm.resx">
+      <DependentUpon>AddTestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\DoctorMainForm.resx">
       <DependentUpon>DoctorMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\SelectPillsForm.resx">
       <DependentUpon>SelectPillsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\ViewTestsResultsForm.resx">
+      <DependentUpon>ViewTestsResultsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

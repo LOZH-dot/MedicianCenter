@@ -16,7 +16,5 @@ namespace MedicianCenter.Database.Model
         public int ID_list_tests { get; set; }
 
         public virtual list_pills list_pills { get; set; }
-
-        public virtual list_tests list_tests { get; set; }
     }
 }

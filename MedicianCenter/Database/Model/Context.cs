@@ -22,6 +22,7 @@ namespace MedicianCenter.Database.Model
         public virtual DbSet<list_tests> list_tests { get; set; }
         public virtual DbSet<med_card> med_card { get; set; }
         public virtual DbSet<med_card_contra> med_card_contra { get; set; }
+        public virtual DbSet<TestResult> TestResult { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -105,11 +106,6 @@ namespace MedicianCenter.Database.Model
             modelBuilder.Entity<list_tests>()
                 .Property(e => e.opisanie)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<list_tests>()
-                .HasMany(e => e.list_pills_list_tests)
-                .WithRequired(e => e.list_tests)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<med_card>()
                 .Property(e => e.surname)
