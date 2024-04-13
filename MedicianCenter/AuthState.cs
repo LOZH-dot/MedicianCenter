@@ -10,8 +10,7 @@ namespace MedicianCenter
     {
         NonAuth,
         Doctor,
-        Nurse,
-        Patient,
+        Assistant,
         Registar,
         Admin
     }

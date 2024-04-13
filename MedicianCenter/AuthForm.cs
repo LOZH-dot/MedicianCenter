@@ -30,10 +30,8 @@ namespace MedicianCenter
                 {
                     if (db.Database.SqlQuery<int>("SELECT IS_MEMBER('doctor')").First() == 1)
                         StateSingleton.getInstance().authState = AuthState.Doctor;
-                    else if (db.Database.SqlQuery<int>("SELECT IS_MEMBER('patient')").First() == 1)
-                        StateSingleton.getInstance().authState = AuthState.Patient;
-                    else if (db.Database.SqlQuery<int>("SELECT IS_MEMBER('med_sestra')").First() == 1)
-                        StateSingleton.getInstance().authState = AuthState.Nurse;
+                    else if (db.Database.SqlQuery<int>("SELECT IS_MEMBER('assistant')").First() == 1)
+                        StateSingleton.getInstance().authState = AuthState.Assistant;
                     else if (db.Database.SqlQuery<int>("SELECT IS_MEMBER('registrator')").First() == 1)
                         StateSingleton.getInstance().authState = AuthState.Registar;
                     else if (db.Database.SqlQuery<int>("SELECT IS_MEMBER('admin')").First() == 1)
@@ -56,9 +54,10 @@ namespace MedicianCenter
                     this.Hide();
                     dmf.Show();
                     break;
-                case AuthState.Nurse:
-                    break;
-                case AuthState.Patient:
+                case AuthState.Assistant:
+                    LabAssistant.LabAssistantMainForm lamf = new LabAssistant.LabAssistantMainForm();
+                    this.Hide();
+                    lamf.Show();
                     break;
                 case AuthState.Registar:
                     Registar.RegistarMainForm rmf = new Registar.RegistarMainForm();

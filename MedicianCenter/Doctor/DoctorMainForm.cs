@@ -121,14 +121,14 @@ namespace MedicianCenter.Doctor
                             CreateExtract(savePath, mc);
                         }
                     }));
-                    m.MenuItems.Add(new MenuItem("Направить к другому специалисту", (s, se) =>
-                    {
-                        // Направить к другому специалисту
-                        using (Database.Model.Context db = new Database.Model.Context())
-                        {
+                    //m.MenuItems.Add(new MenuItem("Направить к другому специалисту", (s, se) =>
+                    //{
+                    //    // Направить к другому специалисту
+                    //    using (Database.Model.Context db = new Database.Model.Context())
+                    //    {
 
-                        }
-                    }));
+                    //    }
+                    //}));
                     m.MenuItems.Add(new MenuItem("Удалить", (s, se) =>
                     {
                         // Удалить карту
