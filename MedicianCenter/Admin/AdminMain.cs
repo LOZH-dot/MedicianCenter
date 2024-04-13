@@ -30,9 +30,17 @@ namespace MedicianCenter.Admin
         private async void UpdateDoctorsDataGridView()
         {
             using (Database.Model.Context db = new Database.Model.Context())
-            {
                 DoctorsDataGridView.DataSource = await db.doctor.Include(x => x.istoria_priemov).ToListAsync();
-            }
+
+            DoctorsDataGridView.Columns["ID_doctor"].Visible = false;
+            DoctorsDataGridView.Columns["surname"].HeaderText = "Фамилия";
+            DoctorsDataGridView.Columns["name"].HeaderText = "Имя";
+            DoctorsDataGridView.Columns["middle_name"].HeaderText = "Отчетство";
+            DoctorsDataGridView.Columns["cabinet"].HeaderText = "Кабинет";
+            DoctorsDataGridView.Columns["date_of_birth"].HeaderText = "Дата рождения";
+            DoctorsDataGridView.Columns["work_number"].HeaderText = "Рабочий телефон";
+            DoctorsDataGridView.Columns["specialization"].HeaderText = "Специализация";
+            DoctorsDataGridView.Columns["istoria_priemov"].Visible = false;
             
         }
 
