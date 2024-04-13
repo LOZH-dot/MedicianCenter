@@ -24,6 +24,7 @@ namespace MedicianCenter.Admin
             UpdateDoctorsDataGridView();
             UpdatePillsDataGridView();
             UpdateMedCardsDataGridView();
+            UpdateTestsDataGridView();
         }
 
         private async void UpdateDoctorsDataGridView()
@@ -35,6 +36,11 @@ namespace MedicianCenter.Admin
             
         }
 
+        private async void UpdateTestsDataGridView()
+        {
+            using (Database.Model.Context db = new Context())
+                TestDataGridView.DataSource = await db.list_tests.ToListAsync();
+        }
         private async void UpdatePillsDataGridView()
         {
             using (Database.Model.Context db = new Database.Model.Context())
@@ -220,6 +226,11 @@ namespace MedicianCenter.Admin
         private void Adf_FormClosed(object sender, FormClosedEventArgs e)
         {
             UpdateDoctorsDataGridView();
+        }
+
+        private void AddTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Doctor.AddTestForm adf = new Doctor.AddTestForm();
         }
     }
 }

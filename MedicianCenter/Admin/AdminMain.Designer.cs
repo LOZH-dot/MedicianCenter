@@ -43,6 +43,9 @@
             this.докторToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.препаратToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.медицинскаяКартаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TestPage = new System.Windows.Forms.TabPage();
+            this.TestDataGridView = new System.Windows.Forms.DataGridView();
+            this.AddTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DoctorsPage.SuspendLayout();
@@ -53,6 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MedCardsDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.TestPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TestDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -69,6 +74,7 @@
             this.tabControl1.Controls.Add(this.DoctorsPage);
             this.tabControl1.Controls.Add(this.ContraPage);
             this.tabControl1.Controls.Add(this.MedCardsPage);
+            this.tabControl1.Controls.Add(this.TestPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -176,7 +182,8 @@
             this.добавитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.докторToolStripMenuItem,
             this.препаратToolStripMenuItem,
-            this.медицинскаяКартаToolStripMenuItem});
+            this.медицинскаяКартаToolStripMenuItem,
+            this.AddTestToolStripMenuItem});
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
             this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
@@ -202,6 +209,34 @@
             this.медицинскаяКартаToolStripMenuItem.Text = "Медицинская карта";
             this.медицинскаяКартаToolStripMenuItem.Click += new System.EventHandler(this.MedCardToolStripMenuItem_Click);
             // 
+            // TestPage
+            // 
+            this.TestPage.Controls.Add(this.TestDataGridView);
+            this.TestPage.Location = new System.Drawing.Point(4, 22);
+            this.TestPage.Name = "TestPage";
+            this.TestPage.Size = new System.Drawing.Size(763, 412);
+            this.TestPage.TabIndex = 3;
+            this.TestPage.Text = "Анализы";
+            this.TestPage.UseVisualStyleBackColor = true;
+            // 
+            // TestDataGridView
+            // 
+            this.TestDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.TestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TestDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TestDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.TestDataGridView.Name = "TestDataGridView";
+            this.TestDataGridView.ReadOnly = true;
+            this.TestDataGridView.Size = new System.Drawing.Size(763, 412);
+            this.TestDataGridView.TabIndex = 0;
+            // 
+            // AddTestToolStripMenuItem
+            // 
+            this.AddTestToolStripMenuItem.Name = "AddTestToolStripMenuItem";
+            this.AddTestToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.AddTestToolStripMenuItem.Text = "Анализ";
+            this.AddTestToolStripMenuItem.Click += new System.EventHandler(this.AddTestToolStripMenuItem_Click);
+            // 
             // AdminMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +261,8 @@
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.TestPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TestDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +283,8 @@
         private System.Windows.Forms.ToolStripMenuItem докторToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem препаратToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem медицинскаяКартаToolStripMenuItem;
+        private System.Windows.Forms.TabPage TestPage;
+        private System.Windows.Forms.DataGridView TestDataGridView;
+        private System.Windows.Forms.ToolStripMenuItem AddTestToolStripMenuItem;
     }
 }

@@ -49,6 +49,7 @@ namespace MedicianCenter
             switch (StateSingleton.getInstance().authState)
             {
                 case AuthState.NonAuth:
+                    MessageBox.Show("Указаны неверные логин или пароль!");
                     break;
                 case AuthState.Doctor:
                     Doctor.DoctorMainForm dmf = new Doctor.DoctorMainForm();
